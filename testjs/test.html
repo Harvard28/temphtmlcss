@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#time {
+  font-size: 24px;
+}
+#seconds {
+  font-size: 24px;
+}
+#changingText {
+  font-size: 24px;
+  transition: color 1s;
+}
+</style>
+</head>
+<body>
+
+<h1 id="greeting">Chào Buổi Tối</h1>
+
+<div id="time"></div>
+<div id="seconds"></div>
+<div id="changingText">This text is changing color</div>
+
+<script>
+function updateClock() {
+  const now = new Date();
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const seconds = String(now.getSeconds()).padStart(2, '0');
+  
+  document.getElementById('time').innerHTML = `The time now is: ${hours}:${minutes}:${seconds}`;
+  document.getElementById('seconds').innerHTML = `Seconds: ${seconds}`;
+  
+  // Change the color of the text
+  const colors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF00FF', '#00FFFF'];
+  document.getElementById('changingText').style.color = colors[Math.floor(Math.random() * colors.length)];
+}
+
+// Update the clock every second
+setInterval(updateClock, 1000);
+
+// Initial call to set the clock immediately on page load
+updateClock();
+</script>
+
+</body>
+</html>
