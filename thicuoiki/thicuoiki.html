@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multi Step Form Widget</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="form-container">
+  <div class="step-header">
+    <h2>MULTI STEPS FORM WIDGET</h2>
+  </div>
+  <div id="step1" class="form-step active-step">
+    <button onclick="nextStep()">Profile</button>
+    <input type="text" placeholder="First Name">
+    <input type="text" placeholder="Last Name">
+    <input type="text" placeholder="Phone">
+    <div>
+      Gender: 
+      <input type="radio" name="gender" value="female"> Female
+      <input type="radio" name="gender" value="male"> Male
+    </div>
+    <textarea placeholder="Address"></textarea>
+    <button onclick="nextStep()">Next</button>
+  </div>
+  <!-- Additional steps would go here -->
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
